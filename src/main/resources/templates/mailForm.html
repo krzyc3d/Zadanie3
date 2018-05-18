@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head></head>
+<body>
+<span th:text="${message}"></span>
+
+ <table class="table">
+    <thead>
+    <th>Build mail</th>
+    <!--<th>Item2</th>-->
+    <!--<th>Item3</th>-->
+    </thead>
+    <tbody>
+    <tr th:each="item1 : ${item}">
+        <td th:text="${item1.name}">NVM</td>
+        <!--<td th:text="${uzytkownik.firstName}">Szymon</td>-->
+        <!--<td th:text="${uzytkownik.surname}">Dembek</td>-->
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
