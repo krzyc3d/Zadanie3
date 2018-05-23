@@ -2,21 +2,25 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head></head>
 <body>
-<span th:text="${message}"></span>
 
+<form  th:action="@{/send}" method="post" th:object="${email}">
  <table class="table">
     <thead>
     <th>Build mail</th>
-    <!--<th>Item2</th>-->
-    <!--<th>Item3</th>-->
     </thead>
     <tbody>
-    <tr th:each="item1 : ${item}">
-        <td th:text="${item1.name}">NVM</td>
-        <!--<td th:text="${uzytkownik.firstName}">Szymon</td>-->
-        <!--<td th:text="${uzytkownik.surname}">Dembek</td>-->
+    <tr>
+        <td> Send to...  </td>
+        <td><input type="text"  placeholder="Give mail adress" name="to"  th:value="*{to}"/></td>
+        <td> Set subject  </td>
+        <td><input type="text"  placeholder="Give subjest" name="subject" th:value="*{subject}"/></td>
+        <td> Set content  </td>
+        <td><input type="text"  placeholder="Give content" name="content" th:value="*{content}"/></td>
+
     </tr>
     </tbody>
 </table>
+    <button type="submit">SendMessage</button>
+</form>
 </body>
 </html>
